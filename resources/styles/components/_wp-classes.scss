@@ -1,0 +1,100 @@
+/**
+ * WordPress Generated Classes
+ * @see http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+ */
+
+/** Media alignment */
+
+.entry-content {
+  .alignwide {
+    margin-left: -80px;
+    margin-right: -80px;
+    max-width: 100vw;
+  }
+
+  .alignfull {
+    margin-left: calc(-100vw / 2 + 100% / 2);
+    margin-right: calc(-100vw / 2 + 100% / 2);
+    max-width: 100vw;
+  }
+
+  .alignfull img {
+    width: 100vw;
+  }
+
+  .wp-block-editor-blocks-wrapper {
+    .wrapper-inner {
+      max-width: 1110px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.alignnone {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.aligncenter {
+  display: block;
+  height: auto;
+}
+
+.alignleft,
+.alignright {
+  height: auto;
+}
+
+/** Captions */
+
+// TODO: .wp-caption {}
+// TODO: .wp-caption img {}
+// TODO: .wp-caption-text {}
+
+/** Text meant only for screen readers */
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  color: #000;
+  background: #fff;
+}
+
+// .wp-block {
+//   max-width: 1240px !important;
+//   margin: 0 auto;
+// }
+
+.wp-block {
+  @apply max-w-screen-lg mx-auto;
+}
+
+// Block color for acf
+.acf-block-component {
+  .acf-block-fields {
+    background: #edf6ff !important;
+    margin-top: 30px;
+  }
+}
+
+.block-editor {
+  .block-slider-split-1 .text-block,
+  .block-slider-split-1 .grid__outer.space,
+  .block-slider-split-1 .grid__outer.space .text-block.right,
+  .block-slider-split-1 .grid__outer.space .text-block.left {
+    padding: 0 !important;
+  }
+
+  .block-gallery-things-to-do__item--image img,
+  .block-gallery-things-to-do .overlay-things {
+    max-width: 250px !important;
+  }
+}

@@ -1,0 +1,49 @@
+.block-image-button-links {
+  .grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+
+    @include small-up {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include large-up {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include xl-up {
+      grid-template-columns: repeat(4, 259px);
+    }
+
+    .gallery-img {
+      position: relative;
+      margin: 0 auto;
+
+      img {
+        height: auto;
+      }
+    }
+  }
+
+  .link-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%);
+
+    span {
+      position: absolute;
+      bottom: 0;
+      padding: 0 0 5px 10px;
+      font-size: 15px;
+      color: $white;
+
+      @include medium-up {
+        font-size: 28px;
+        padding: 0 0 10px 10px;
+      }
+    }
+  }
+}

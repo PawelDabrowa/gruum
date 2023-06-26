@@ -1,0 +1,63 @@
+.gallery-modal-wrapper {
+  display: none;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(43, 47, 49, 0.9);
+  overflow: scroll;
+  padding: 30px;
+
+  &.show {
+    display: flex !important;
+  }
+
+  .modal {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+    display: block;
+    height: auto;
+    overflow: visible;
+  }
+
+  .modal-dialog {
+    display: inline-grid;
+    margin: auto;
+    text-align: left;
+    max-width: none;
+
+    img {
+      max-height: 70vh;
+      max-width: 90vw;
+    }
+  }
+
+  .modal-body {
+    margin: auto;
+  }
+
+  button {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+  }
+
+  button.close {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border: 1px solid $white;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: $gray-light;
+  }
+}
+
+// body.fix {
+//   overflow: hidden;
+// }

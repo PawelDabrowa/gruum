@@ -1,0 +1,67 @@
+.block-contact-details {
+  .grid__outer {
+    grid-template-columns: 1fr;
+
+    &.grid.grid-top {
+      align-items: initial;
+      padding: 20px 0;
+
+      @include medium-up {
+        padding: initial;
+      }
+    }
+
+    @include small-up {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  p {
+    margin: auto;
+  }
+
+  &__btns {
+    padding-top: 10px;
+  }
+
+  .cta-block {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    transition: $transition;
+    height: 100%;
+
+    .phone {
+      margin: 20px 0;
+
+      @include small-up {
+        margin: initial;
+      }
+    }
+
+    &:hover {
+      background: $white;
+    }
+
+    h4 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .email a,
+    .phone a {
+      color: $gray-dark;
+    }
+
+    .fa-envelope,
+    .fa-phone {
+      margin-right: 10px;
+    }
+
+    @include medium-up {
+      margin: auto;
+      padding: 3.5rem 1rem;
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.block-our-services-single {
+  @apply -mt-1;
+
+  background-color: $blue-light;
+
+  .service {
+    @apply flex items-center flex-col text-center p-0 max-w-sm;
+
+    @include small-plus {
+      @apply px-6 py-4;
+    }
+  }
+
+  img {
+    @apply h-24 w-auto  m-auto;
+  }
+
+  .icon {
+    @apply m-4;
+
+    img {
+      @apply max-h-20;
+    }
+  }
+
+  .flex-1 {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    height: 100%;
+    flex-wrap: wrap;
+  }
+
+  .section-header {
+    text-align: center;
+    font-size: 28px;
+    line-height: inherit;
+    margin: 20px 0;
+
+    @include small-up {
+      margin: 20px 0;
+      font-size: 40px;
+    }
+
+    @include medium-up {
+      line-height: 30px;
+    }
+  }
+
+  h4 {
+    font-size: 20px;
+    text-transform: uppercase;
+    line-height: 35px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    padding: 1rem;
+  }
+
+  .intro_container {
+    @apply text-center m-auto pb-12 mt-2;
+
+    @include small-plus {
+      max-width: $section-max-width;
+    }
+  }
+
+  p {
+    line-height: 28px;
+    font-size: 15px;
+    margin-top: 0;
+    padding: 1rem 0;
+  }
+
+  .white-btn {
+    text-transform: capitalize;
+    margin: 1rem;
+    margin-top: auto;
+  }
+}

@@ -1,0 +1,52 @@
+.heading {
+  font-weight: 600;
+  margin: 15px 0;
+  text-transform: capitalize;
+  font-family: $ff-secondary;
+
+  &--1 {
+    font-size: 44px;
+    line-height: 44px;
+
+    @include large-up {
+      font-size: 52px;
+      line-height: 63px;
+    }
+  }
+
+  &--2 {
+    @apply mb-9;
+
+    font-size: 28px;
+    line-height: 28px;
+
+    @include large-up {
+      font-size: 44px;
+      line-height: 54px;
+    }
+  }
+
+  &--3 {
+    font-size: 22px;
+    line-height: 34px;
+  }
+}
+
+.label {
+  display: block;
+  margin-bottom: 3px;
+  color: $primary;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+
+  @include medium-up {
+    font-size: 28px;
+    line-height: 34px;
+    margin-bottom: 12px;
+  }
+
+  &--white {
+    color: $white;
+  }
+}

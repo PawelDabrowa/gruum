@@ -1,0 +1,106 @@
+/* Post Modal CSS */
+.modal-wrapper {
+  display: none;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(43, 47, 49, 0.9);
+  overflow: scroll;
+
+  &.show {
+    display: block !important;
+  }
+
+  .modal {
+    position: relative;
+    display: block;
+    justify-content: center;
+    width: 80%;
+    height: auto;
+    min-height: 300px;
+    padding: 20px 15px;
+    background: #eee;
+    color: #000;
+    margin: 10% auto;
+    border-radius: 10px;
+    overflow: visible;
+
+    .close-modal {
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      cursor: pointer;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+    }
+
+    h1 {
+      font-size: 56px;
+      margin: 35px 0;
+    }
+
+    .entry-content p {
+      font-size: 16px;
+    }
+  }
+
+  .hide,
+  .hide-modal {
+    display: none;
+  }
+
+  .modal-container {
+    padding: 0;
+  }
+
+  .container.width {
+    max-width: initial;
+  }
+
+  article.gallery,
+  article.offers,
+  article.rooms {
+    padding: 0;
+    max-width: initial;
+
+    h1 {
+      font-size: 28px;
+      margin: 0;
+    }
+
+    .entry-title {
+      font-weight: 600;
+    }
+
+    .entry-content {
+      &.grid {
+        gap: 20px;
+        padding: 0;
+        grid-template-columns: 1fr 1fr;
+        align-items: flex-start;
+      }
+    }
+  }
+
+  .room-price {
+    margin-top: 20px;
+
+    span {
+      font-size: 28px;
+      font-weight: 600;
+    }
+  }
+
+  li {
+    font-weight: 600;
+  }
+}

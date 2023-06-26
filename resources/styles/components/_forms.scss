@@ -1,0 +1,85 @@
+.search-form button,
+input {
+  border-radius: $border-radius;
+  height: 3em;
+  padding: 0 10px;
+}
+
+input[type=search],
+input[type=email] {
+  width: 200px;
+  // border: $border-settings;
+  // border-color: transparent;
+}
+
+.search-form button,
+input[type=submit] {
+  cursor: pointer;
+  padding: 0 2em;
+  background-color: $button-bg-color;
+  color: $button-text-color;
+  border: $border-settings;
+  transition: $transition;
+
+  &:hover {
+    background-color: $button-bg-color-hover;
+    color: $button-text-color-hover;
+  }
+}
+
+.wpcf7-spinner {
+  display: none;
+}
+
+.search,
+.error404 {
+  form {
+    display: flex;
+    margin-top: 10px;
+  }
+}
+
+.error404 {
+  input[type=search] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+.footer-contact {
+  &__label {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+
+  &__label input,
+  &__label textarea {
+    background-color: $white;
+    min-height: 40px;
+    width: 280px;
+    border: $border-settings;
+    border-color: $white;
+    padding: 5px 15px;
+    color: $button-text-color;
+    font-family: $ff-primary;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:focus {
+      transition: background-color 600000s 0s, color 600000s 0s;
+    }
+  }
+
+  &__label input[type=submit] {
+    width: min-content;
+    min-width: 140px;
+    background-color: $button-bg-color;
+    border-color: $button-border-color;
+    min-height: 34px;
+
+    &:hover {
+      background-color: $button-bg-color-hover;
+      color: $button-text-color-hover;
+      border-color: $button-border-color-hover;
+    }
+  }
+}

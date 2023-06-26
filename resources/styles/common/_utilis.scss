@@ -1,0 +1,64 @@
+// overlay
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(0 16 61 / 84%);
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.25s ease-in-out;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.25s ease-in-out;
+}
+
+.u-img {
+  justify-self: center;
+
+  &--desktop {
+    display: none;
+
+    @extend .u-img;
+
+    @include medium-up {
+      display: inline-block;
+    }
+  }
+
+  &--mobile {
+    display: inline-block;
+
+    @extend .u-img;
+
+    @include medium-up {
+      display: none;
+    }
+  }
+}
+
+img.avatar {
+  width: auto;
+}
+
+.sidebar-cont {
+  border: 1px solid #aae0ea;
+  background: #aae0ea;
+  padding: 15px;
+}
+
+.blog-thumb-content {
+  padding: 1.25em;
+}
+
+.card-body {
+  padding: 0;
+}

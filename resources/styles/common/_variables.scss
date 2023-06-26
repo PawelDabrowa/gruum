@@ -1,0 +1,78 @@
+// Colors
+$gray-dark:           #3a3b3c;
+$gray-light:          #d3d3d3;
+$ghost-white:         #f8f8ff;
+$white:               #fff;
+$black:               #000;
+$blue-dark:           #173c5e;
+$blue-medium:         #211d71;
+// $blue-light:          #aae0ea;
+$blue-light:          #568bb5;
+$green-light:         #1c6061;
+$gold:                #d7bd70;
+$brown-medium:        #b6a58b;
+$brown-light:         #eae3cf;
+$primary:             $blue-dark;
+$secondary:           $ghost-white;
+
+// Body text color
+$body-text-color: $primary;
+
+// Buttons
+$button-bg-color: $primary;
+$button-bg-color-hover: $ghost-white;
+$button-text-color: $white;
+$button-text-color-hover: $black;
+$button-border-color: $primary;
+$button-border-color-hover: $primary;
+$border-settings: 1px solid $primary;
+
+// Radius
+$border-radius: 0;
+
+// fonts
+$ff-primary: "Poppins", sans-serif;
+$ff-secondary: "Poppins", sans-serif;
+$font-size-base: 1rem;
+$letter-spacing: 0.2rem;
+
+// Footer
+$footer-fonts-color: $body-text-color;
+$footer-line-height: 15px;
+$footer-font-size: 14px;
+
+// Banner
+$banner-height-desktop: 70vh;
+$banner-height-tablet: 85vh;
+$banner-height-mobile: 80vh;
+$min-banner-height: 600px;
+
+// transitions
+$transition: all 0.3s linear;
+
+// overlay background color
+$overlay-background-color: rgba(0, 0, 0, 0.6);
+
+// section width
+$section-max-width: 680px;
+$blog-container-width: 900px;
+
+// Logo height
+$logo-height: 80px;
+
+// Breakpoints
+$bp-xxsmall: "320px";
+$bp-xsmall: "480px";
+$bp-small: "640px";
+$bp-smallplus: "768px";
+$bp-medium: "998px";
+$bp-large: "1024px";
+$bp-xl: "1280px";
+$bp-1xl: "1385px";
+$bp-2xl: "1536px";
+
+// Slick Carousel font path
+$slick-font-path: "~slick-carousel/slick/fonts/";
+
+// Slick Carousel ajax-loader.gif path
+$slick-loader-path: "~slick-carousel/slick/";

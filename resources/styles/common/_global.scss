@@ -1,0 +1,171 @@
+.container {
+  // max-width: 1190px;
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 0 10px * 1.5;
+  overflow: visible;
+
+  &--full {
+    max-width: 1440px;
+  }
+}
+
+.section {
+  position: relative;
+  padding: 36px 0;
+
+  @include medium-up {
+    padding: 73px 0;
+  }
+}
+
+.section-top {
+  padding: 36px 0 0;
+
+  @include medium-up {
+    padding: 73px 0 0;
+  }
+}
+
+.section-bottom {
+  padding: 0 0 36px;
+
+  @include medium-up {
+    padding: 0 0 73px;
+  }
+}
+
+a {
+  color: $body-text-color;
+}
+
+// GRID LAYOUT CLASSES
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  @include medium-up {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// FLEXBOX LAYOUT CLASSES
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.col {
+  width: 100%;
+  padding: 10px * 1.5;
+  display: inline-block;
+
+  &--md25 {
+    @include medium-up {
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+  }
+
+  &--md33 {
+    @include medium-up {
+      flex: 0 0 33.3333%;
+      max-width: 33.3333%;
+    }
+  }
+
+  &--md50 {
+    @include medium-up {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+
+  &--lg25 {
+    @include large-up {
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+  }
+
+  &--lg33 {
+    @include large-up {
+      flex: 0 0 33.3333%;
+      max-width: 33.3333%;
+    }
+  }
+
+  &--lg50 {
+    @include large-up {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+
+  &--lg75 {
+    @include large-up {
+      flex: 0 0 75%;
+      max-width: 75%;
+    }
+  }
+
+  &--hidden-sm {
+    display: none;
+
+    @include medium-up {
+      display: inline-block;
+    }
+  }
+}
+
+.headline-icon {
+  // width: 70px !important;
+  width: auto;
+  display: block;
+  text-align: center;
+  height: auto !important;
+
+  img {
+    width: auto;
+  }
+}
+
+//  REMOVE PADDINGS
+.p {
+  &b-0 {
+    padding-bottom: 0;
+  }
+
+  &t-0 {
+    padding-top: 0;
+  }
+}
+
+svg {
+  display: inline;
+}
+
+body.fix {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Prevent body scroll */
+.noscroll {
+  position: relative; /* for ios */
+  overflow: hidden;
+}
