@@ -1,4 +1,4 @@
-<div class="{{ $block->classes }}">
+<section class="{{ $block->classes }}">
 
 {{-- Fetch new products from WooCommerce --}}
 @php
@@ -14,7 +14,7 @@
 
 {{-- Display new products on the home page --}}
 @if (!empty($products))
-    <h2>New Products</h2>
+    <h2>✈️ New Products ✈️ </h2>
     <div class="container">
       <div class="woo-slider">
         @foreach ($products as $product)
@@ -29,8 +29,10 @@
             <a href="{{ $product_link }}">
                 {!! $product_image !!}
             </a>
-            <h3><a href="{{ $product_link }}">{{ $product_name }}</a></h3>
-            <p>Price: {!! wc_price($product_price) !!}</p>
+            <div class="woo-content">
+                <h3><a href="{{ $product_link }}">{{ $product_name }}</a></h3>
+                <p>{!! wc_price($product_price) !!}</p>
+            </div>
             <a href="{{ $product_link }}" class="btn btn-primary">Buy Now</a>
         </div>
         @endforeach
@@ -39,4 +41,4 @@
 @else
     No new products found.
 @endif
-</div>
+</section>
