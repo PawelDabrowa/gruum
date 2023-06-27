@@ -4,6 +4,7 @@ Hop Sage Template with ACF Composer
   <a href="https://roots.io/sage/">
     <img alt="Sage" src="https://cdn.roots.io/app/uploads/logo-sage.svg" height="100">
   </a>
+  
 </p>
 
 <p align="center">
@@ -12,7 +13,7 @@ Hop Sage Template with ACF Composer
   </a>
 
   <a href="https://packagist.org/packages/roots/sage">
-    <img alt="Packagist" src="https://img.shields.io/packagist/v/roots/sage.svg?style=flat-square" />
+    <img alt="Packagist," src="https://img.shields.io/packagist/v/roots/sage.svg?style=flat-square" />
   </a>
 
   <a href="https://github.com/roots/sage/actions">
