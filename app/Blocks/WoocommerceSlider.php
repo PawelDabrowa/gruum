@@ -33,7 +33,14 @@ class WoocommerceSlider extends Block
      *
      * @var string|array
      */
-    public $icon = 'editor-ul';
+    public $icon = [
+        // Specifying a background color to appear with the icon e.g.: in the inserter.
+        'background' => '#fdc300',
+        // Specifying a color for the icon (optional: if not set, a readable color will be automatically defined)
+        'foreground' => '#000',
+        // Specifying a dashicon for the block
+        'src' => 'format-image',
+    ];
 
     /**
      * The block keywords.
@@ -61,8 +68,7 @@ class WoocommerceSlider extends Block
      *
      * @var string
      */
-    public $mode = 'preview';
-
+    public $mode = 'editor';
     /**
      * The default block alignment.
      *
@@ -152,9 +158,12 @@ class WoocommerceSlider extends Block
         $woocommerceSlider = new FieldsBuilder('woocommerce_slider');
 
         $woocommerceSlider
-            ->addRepeater('items')
-                ->addText('item')
-            ->endRepeater();
+        ->addText('header_title', [
+            'label' => 'Header Title',
+            'wrapper' => [
+                'width' => '50',
+            ],
+        ]);
 
         return $woocommerceSlider->build();
     }

@@ -14,7 +14,9 @@
 
 {{-- Display new products on the home page --}}
 @if (!empty($products))
-    <h2>✈️ New Products ✈️ </h2>
+    @hasfield('header_title') 
+        <h2>✈️ @field('header_title') ✈️ </h2> 
+    @endfield
     <div class="container">
       <div class="woo-slider">
         @foreach ($products as $product)

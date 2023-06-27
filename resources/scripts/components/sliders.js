@@ -361,6 +361,13 @@ if(woo_block_slider.length) {
       {
         breakpoint: 1500,
         settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1100,
+        settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
         },

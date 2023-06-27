@@ -72,7 +72,7 @@ jobs:
         yarn cache clean && yarn && yarn run build
 
     - name: Set project name
-      run: echo "PROJECT_NAME=wpcare" >> $GITHUB_ENV
+      run: echo "PROJECT_NAME=gruum" >> $GITHUB_ENV
 
     - name: Check if PROJECT_NAME folder exists
       run: |
