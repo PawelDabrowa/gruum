@@ -4,7 +4,6 @@ Hop Sage Template with ACF Composer
   <a href="https://roots.io/sage/">
     <img alt="Sage" src="https://cdn.roots.io/app/uploads/logo-sage.svg" height="100">
   </a>
-  
 </p>
 
 <p align="center">
