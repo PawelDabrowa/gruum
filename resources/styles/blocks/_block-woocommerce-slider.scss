@@ -1,0 +1,31 @@
+.woo-slider {
+  .container {
+    max-width: 1440px;
+  }
+
+  .woo-inner {
+    background-color: #eaeff3;
+    margin: 0 10px;
+  }
+
+  .btn-primary {
+    display: block;
+    border-color: #e65928;
+    background-color: #e65928;
+    color: #fff;
+    background-image: none;
+    text-shadow: none;
+    box-shadow: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 6px 22px;
+    border-radius: 0;
+    border-width: 2px;
+    border-style: solid;
+    outline: none;
+  }
+
+  .slick-list {
+    padding-left: 0 !important;
+  }
+}

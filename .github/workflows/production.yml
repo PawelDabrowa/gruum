@@ -1,0 +1,91 @@
+name: Deploy
+
+env:
+  SSH_USER: ${{ secrets.DEPLOY_SSH_USER }}
+  SSH_HOST: ${{ secrets.DEPLOY_SSH_HOST }}
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy_cloudways:
+    name: Deploy to Cloudways
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Cache - Get Yarn Cache Directory Path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+
+    - name: Cache - Load Yarn Cache
+      uses: actions/cache@v2
+      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+    - name: Cache - Get Composer Cache Directory Path
+      id: get-composer-cache-dir
+      run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+    - name: Cache - Load Composer Cache
+      uses: actions/cache@v2
+      id: composer-cache # use this to check for `cache-hit` (`steps.composer-cache.outputs.cache-hit != 'true'`)
+      with:
+        path: ${{ steps.get-composer-cache-dir.outputs.dir }}
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-composer-
+ 
+    - name: Configure SSH
+      run: |
+        mkdir -p ~/.ssh/
+        echo "$SSH_KEY" > ~/.ssh/deploy.key
+        chmod 600 ~/.ssh/deploy.key
+        cat >>~/.ssh/config <<END
+        Host cloudways
+          HostName $SSH_HOST
+          User $SSH_USER
+          IdentityFile ~/.ssh/deploy.key
+          StrictHostKeyChecking no
+        END
+      env:
+        SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+
+    # Install Node.js and Yarn
+    - name: Setup Node.js and Yarn
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16.x
+        cache: 'yarn'
+          
+    # Install dependencies and build assets
+    - name: Install Dependencies and Build
+      run: |
+        composer install
+        yarn install --frozen-lockfile
+        yarn cache clean && yarn && yarn run build
+
+    - name: Set project name
+      run: echo "PROJECT_NAME=wpcare" >> $GITHUB_ENV
+
+    - name: Check if PROJECT_NAME folder exists
+      run: |
+        if [ ! -d "$PROJECT_NAME" ]; then
+          mkdir "$PROJECT_NAME"
+        fi
+
+    - name: Send files
+      run: "rsync --delete -avO ${{ env.RSYNC_FLAGS }} --exclude-from=${{ env.EXCLUDES }} ./ ${{ env.SSH_USER }}@${{ env.SSH_HOST }}:${{ env.DESTINATION }}/${{ env.PROJECT_NAME }}"
+      env:
+        RSYNC_FLAGS: '' #--dry-run
+        EXCLUDES: bin/rsync-excludes.txt
+        SSH_HOST: cloudways
+        DESTINATION: "~/public_html/wp-content/themes/"
+        PROJECT_TYPE: theme
+        PROJECT_NAME: ${{ env.PROJECT_NAME }}

@@ -346,19 +346,21 @@ let woo_block_slider = $('.woo-slider');
 
 if(woo_block_slider.length) {
   let woo_block_slider_settings = {
-    'dots': true,
+    'dots': false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
     cssEase: 'linear',
+    centerPadding: '60px',
     autoplay: false,
     pauseOnHover: false,
+    centerMode: true,
     responsive: [
       {
         breakpoint: 1500,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 5,
           slidesToScroll: 1,
         },
       },
