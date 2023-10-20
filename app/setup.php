@@ -151,11 +151,11 @@ add_action('widgets_init', function () {
     ] + $config);
 });
 
-function wpcc_allowed_block_types() {
-	return array(
-		'core/paragraph', // Paragraph Block
-		'core/image', // Image Block
-		'core/freeform', // Classic Editor Block
-	);
-}
-add_filter( 'allowed_block_types', 'wpcc_allowed_block_types' );
+// function wpcc_allowed_block_types() {
+// 	return array(
+// 		'core/paragraph', // Paragraph Block
+// 		'core/image', // Image Block
+// 		'core/freeform', // Classic Editor Block
+// 	);
+// }
+// add_filter( 'allowed_block_types', 'wpcc_allowed_block_types' );

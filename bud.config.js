@@ -28,8 +28,8 @@ module.exports = async (app) => {
      * even if they are not explicitly imported in application assets.
      */
     .assets([
-      {from: app.path("@src/images"), to: app.path("@dist/images/@file")},
-      {from: app.path("@src/fonts"), to: app.path("@dist/fonts/@file")},
+      {from: app.path('@src/images'), to: app.path('@dist/images/@file')},
+      {from: app.path('@src/fonts'), to: app.path('@dist/fonts/@file')},
     ])
 
     /**
@@ -47,7 +47,7 @@ module.exports = async (app) => {
      *
      * This should be the URL you use to visit your local development server.
      */
-    .proxy('http://localhost:8102/')
+    .proxy('http://eclipse-template-test.local/')
 
     /**
      * Development URL to be used in the browser.
