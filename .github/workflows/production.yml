@@ -67,7 +67,6 @@ jobs:
     # Install dependencies and build assets
     - name: Install Dependencies and Build
       run: |
-        composer install
         yarn install --frozen-lockfile
         yarn cache clean && yarn && yarn run build
 
